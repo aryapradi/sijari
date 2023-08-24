@@ -21,7 +21,7 @@ class PartaiController extends Controller
     public function store_partai(Request $request)
     {
         Partai::create($request->all());
-        return redirect()->route('partai');
+        return redirect()->route('partai')->with('success','Data Berhasil Di Tambah');;
     }
     
     public function edit_partai($id)
@@ -35,14 +35,14 @@ class PartaiController extends Controller
     {
         $data = Partai::find($id);
         $data->update($request->all());
-        return redirect()->route('partai');
+        return redirect()->route('partai')->with('success','Data Berhasil Di Ubah');
     }
     
     public function hapus_partai($id)
     {
         $data = Partai::find($id);
         $data->delete();
-        return redirect()->route('partai');
+        return redirect()->route('partai')->with('success','data Berhasil Di hapus');
     }
     
 }

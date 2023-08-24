@@ -37,7 +37,7 @@ Route::get('/create_partai',[PartaiController::class,'create_partai'])->name('cr
 Route::post('/store_partai',[PartaiController::class,'store_partai'])->name('store_partai');
 Route::get('/edit_partai/{id}',[PartaiController::class,'edit_partai'])->name('edit_partai');
 Route::post('/update_partai/{id}',[PartaiController::class,'update_partai'])->name('update_partai');
-Route::get('/hapus_partai/{id}',[PartaiController::class,'hapus_partai'])->name('hapus_partai');
+Route::delete('/hapus_partai/{id}',[PartaiController::class,'hapus_partai'])->name('hapus_partai');
 
 
 // ROUTE CALEG
