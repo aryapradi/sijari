@@ -33,7 +33,7 @@ Route::get('/DataCaleg',[CalegControllers::class,'caleg'])->name('caleg');
 
 
 // ROUTE KOORDINATOR
-Route::get('/DataKoor',[KoordinatorController::class,'koor'])->name('koor');
+Route::get('/DataKooR',[KoordinatorController::class,'koor'])->name('koor');
 
 
 // TABLE SAKSI
