@@ -8,6 +8,13 @@ use PHPUnit\Framework\Attributes\IgnoreFunctionForCodeCoverage;
 
 class Koordinator extends Model
 {
+
+    use HasFactory;
+
+    protected $table = 'koordinator';
+
+    protected $guarded = ['id'];
+
     protected $fillable = ['nama_koordinator', 'caleg_id'];
 
     //mendefinisikan relasi

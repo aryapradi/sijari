@@ -2,63 +2,47 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Partai;
 use Illuminate\Http\Request;
 
 class PartaiController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function partai()
     {
-        return view('partai.table');
+        $data = Partai::all();
+        return view('partai.table', compact('data'));
     }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    
+    public function create_partai()
     {
         return view('partai.form');
     }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    
+    public function store_partai(Request $request)
     {
-        //
+        Partai::create($request->all());
+        return redirect()->route('partai');
     }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+    
+    public function edit_partai($id)
     {
-        //
+        $data = Partai::find($id);
+        // dd($data->id);
+        return view('partai.edit', compact('data'));
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
+    
+    public function update_partai(Request $request, $id)
     {
-        //
+        $data = Partai::find($id);
+        $data->update($request->all());
+        return redirect()->route('partai');
     }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
+    
+    public function hapus_partai($id)
     {
-        //
+        $data = Partai::find($id);
+        $data->delete();
+        return redirect()->route('partai');
     }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
+    
 }

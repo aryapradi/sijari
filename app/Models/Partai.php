@@ -7,6 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Partai extends Model
 {
+
+    use HasFactory;
+
+    protected $table = 'partai';
+
+    protected $guarded = ['id'];
+
     protected $fillable = [
         'nama_partai',
     ];

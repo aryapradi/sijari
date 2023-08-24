@@ -7,6 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Caleg extends Model
 {
+
+    use HasFactory;
+
+    protected $table = 'caleg';
+
+    protected $guarded = ['id'];
+
     protected $fillable = [
         'nama_caleg',
         'partai_id',
