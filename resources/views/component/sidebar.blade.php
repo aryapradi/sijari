@@ -12,7 +12,7 @@
 
                 <li class="sidebar-item"> <a class="sidebar-link" href="{{route('caleg')}}"
                         aria-expanded="false"><i data-feather="user"class="feather-icon"></i><span
-                            class="hide-menu">Data Caleg
+                            class="hide-menu">Caleg
                         </span></a>
                 </li>
                 <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{route('koor')}}"

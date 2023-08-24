@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\CalegControllers;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\KoordinatorController;
+use App\Http\Controllers\PemilihController;
+use App\Http\Controllers\SaksiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,31 +24,22 @@ use Illuminate\Support\Facades\Route;
 
 
 // ROUTE HOME / DASHBOARD AWAL 
-Route::get('/', function () {
-    return view('pages.home');
-})->name('home');
+Route::get('/',[HomeController::class,'home'])->name('home');
 
 
 // ROUTE CALEG
-Route::get('/tablecaleg', function () {
-    return view('caleg.table');
-})->name('caleg');
+Route::get('/DataCaleg',[CalegControllers::class,'caleg'])->name('caleg');
 
 
 
 // ROUTE KOORDINATOR
-Route::get('/tablekoor', function () {
-    return view('koordinator.table');
-})->name('koor');
+Route::get('/DataKoor',[KoordinatorController::class,'koor'])->name('koor');
 
 
 // TABLE SAKSI
-Route::get('/tablesaksi', function () {
-    return view('saksi.table');
-})->name('saksi');
+Route::get('/DataSaksi',[SaksiController::class,'saksi'])->name('saksi');
+
 
 // TABLE PEMILIH
-Route::get('/tablepemilih', function () {
-    return view('pemilih.table');
-})->name('pemilih');
+Route::get('/DataPemilih',[PemilihController::class,'pemilih'])->name('pemilih');
 
