@@ -7,7 +7,7 @@
 <div class="card">
     <div class="card-body" style="display: flex; align-items: center;">
         <h4 class="card-title" style="margin-right: auto;">Data Pemilih</h4>
-        <button type="button" class="btn btn-primary" style="border-radius: 10px;">+ Tambah Data</button>
+        <a href="/form_pemilih" class="btn btn-primary btn-sm">Tambah Data</a>
     </div>    
     <div class="table-responsive">
         <table class="table">

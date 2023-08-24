@@ -4,14 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class SaksiController extends Controller
+class PartaiController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function saksi()
+    public function partai()
     {
-        return view('saksi.table');
+        return view('partai.table');
     }
 
     /**
@@ -19,7 +19,7 @@ class SaksiController extends Controller
      */
     public function create()
     {
-        return view('saksi.form');
+        return view('partai.form');
     }
 
     /**

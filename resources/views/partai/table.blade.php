@@ -3,20 +3,19 @@
 
 @section('content')
 
-
 <div class="card">
     <div class="card-body" style="display: flex; align-items: center;">
-        <h4 class="card-title" style="margin-right: auto;">Data Koordinator</h4>
-        <a href="/form_koor" class="btn btn-primary btn-sm">Tambah Data</a>
+        <h4 class="card-title" style="margin-right: auto;">Data Partai</h4>
+        <a href="/form_partai" class="btn btn-primary btn-sm">Tambah Data</a>
     </div>    
     <div class="table-responsive">
         <table class="table">
             <thead>
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
+                    <th scope="col">No</th>
+                    <th scope="col">Id_partai</th>
+                    <th scope="col">Nama Partai</th>
+                    <th scope="col">Aksi</th>
                 </tr>
             </thead>
             <tbody>

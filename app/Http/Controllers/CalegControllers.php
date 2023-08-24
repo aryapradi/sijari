@@ -19,7 +19,7 @@ class CalegControllers extends Controller
      */
     public function create()
     {
-        //
+        return view('caleg.form');
     }
 
     /**

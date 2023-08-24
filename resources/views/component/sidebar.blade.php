@@ -10,6 +10,12 @@
                 <li class="list-divider"></li>
                 <li class="nav-small-cap"><span class="hide-menu">Applications</span></li>
 
+                <li class="sidebar-item"> <a class="sidebar-link" href="{{route('partai')}}"
+                    aria-expanded="false"><i data-feather="user"class="feather-icon"></i><span
+                        class="hide-menu">Partai
+                    </span></a>
+            </li>
+
                 <li class="sidebar-item"> <a class="sidebar-link" href="{{route('caleg')}}"
                         aria-expanded="false"><i data-feather="user"class="feather-icon"></i><span
                             class="hide-menu">Caleg
