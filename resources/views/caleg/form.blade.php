@@ -7,10 +7,10 @@
     <h4 class="card-title mb-4" >Form Caleg</h4>
     <form action="/store_caleg" method="POST">
         @csrf
-        <div class="form-group mb-3">
+        {{-- <div class="form-group mb-3">
             <label for="id" class="text-dark">ID</label>
             <input type="text" class="form-control" id="id"  name="id"  placeholder="Enter ID">
-        </div>
+        </div> --}}
 
         <div class="form-group mb-3">
             <label for="nama" class="text-dark">Nama</label>
@@ -28,8 +28,8 @@
         </div>
 
         <div class="d-flex justify-content-between align-items-center">
-            <a class="btn btn-secondary" style="margin-left: 670px;" href="/DataCaleg">Cancel</a>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <a class="btn btn-secondary ml-auto" href="/DataCaleg">Cancel</a>
+            <button type="submit" class="btn btn-primary ml-auto">Submit</button>
         </div>
     </form>
 </div>

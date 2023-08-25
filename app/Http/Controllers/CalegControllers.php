@@ -14,37 +14,44 @@ class CalegControllers extends Controller
         return view('caleg.table', compact('data'));
     }
     
-    public function create_caleg()
+    public function create_Caleg()
     {
         $partai = Partai::all();
-        return view('caleg.form', compact(['partai']));
+        return view('caleg.form', compact('partai'));
     }
 
-    public function store_caleg(Request $request)
+    public function store_Caleg(Request $request)
     {
         Caleg::create($request->all());
-        return redirect()->route('caleg');
+        return redirect()->route('caleg')->with('success', ' Data Berhasil Di Tambah ');
     }
 
-    public function edit_caleg($id)   
+    public function edit_Caleg($id)   
     {
-        $data = Caleg::find($id);
+        $data = Caleg::findOrFail($id);
         $partai = Partai::all();
         
-        return view('caleg.edit', compact('data','partai'));
+        return view('caleg.edit', compact('data', 'partai'));
     }
 
-    public function update_caleg(Request $request, $id)
+    public function update_Caleg(Request $request, $id)
+    {
+        $data = Caleg::findOrFail($id);
+        $data->update($request->all());
+
+        return redirect()->route('caleg')->with('success', 'Anda Berhasil Mengubah Pada Data  ' . $data->nama_caleg );
+    }
+
+    public function hapus_Caleg($id)
     {
         $data = Caleg::find($id);
-        $data->update($request->all());
-        return redirect()->route('caleg');
-    }
-
-    public function hapus_caleg($id)
-    {
-        $data = caleg::find($id);
-        $data->delete();
-        return redirect()->route('caleg');
+        
+        if ($data) {
+            $namaCaleg = $data->nama_caleg;
+            $data->delete();
+            return redirect()->route('caleg')->with('success', 'Data ' . $namaCaleg . ' Berhasil dihapus');
+        } else {
+            return redirect()->route('caleg')->with('error', 'Data Caleg tidak ditemukan.');
+        }  
     }
 }

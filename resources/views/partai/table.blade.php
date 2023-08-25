@@ -26,23 +26,19 @@
                 <?php $no=1; ?>
                 @foreach ($data as $row)
                     <tr>
-                        <th scope="row">{{ $no++ }}</th>
+                        <td>{{ $no++ }}</td>
                         <td>{{ $row->nama_partai }}</td>
-                        <td style="display: flex; align-items: center; ">
-                            <a href="/edit_partai/{{$row->id}}" style="border-radius: 5px" class="btn btn-success btn-sm mr-1">Edit</a>
-                            @foreach ($data as $row)
-                               <div class="data-item">
-                                 <p>{{ $row->nama }}</p>
-                               <form action="{{ route('hapus_partai', ['id' => $row->id]) }}" method="post">
-                                @csrf
-                                @method('delete')
-                               <button type="submit" style="border-radius: 5px" class="btn btn-danger btn-sm mr-2">Hapus Data</button>
-                            </form>
-                               </div>
-                            @endforeach
-
-                        
+                        <td>
+                            <div class="btn-group" >
+                                <a href="/edit_partai/{{$row->id}}" class="btn btn-success btn-sm mr-1" style="font-size: 15px; margin-right: 20px; border-radius:5px ">Edit</a>
+                                <form action="{{ route('hapus_partai', ['id' => $row->id]) }}" method="post">
+                                    @csrf
+                                    @method('delete')
+                                    <button type="submit" class="btn btn-danger btn-sm" style="border-radius:5px">Hapus</button>
+                                </form>
+                            </div>
                         </td>
+                        
                     </tr>
                 @endforeach
             </tbody>
