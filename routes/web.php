@@ -42,9 +42,11 @@ Route::delete('/hapus_partai/{id}',[PartaiController::class,'hapus_partai'])->na
 
 // ROUTE CALEG
 Route::get('/DataCaleg',[CalegControllers::class,'caleg'])->name('caleg');
-Route::get('/form_caleg',[CalegControllers::class,'create'])->name('create');
-
-
+Route::get('/create_caleg',[CalegControllers::class,'create_caleg'])->name('create_caleg');
+Route::post('/store_caleg',[CalegControllers::class,'store_caleg'])->name('store_caleg');
+Route::get('/edit_caleg/{id}',[CalegControllers::class,'edit_caleg'])->name('edit_caleg');
+Route::post('/update_caleg/{id}',[CalegControllers::class,'update_caleg'])->name('update_caleg');
+Route::get('/hapus_caleg/{id}',[CalegControllers::class,'hapus_caleg'])->name('hapus_caleg');
 
 
 // ROUTE KOORDINATOR

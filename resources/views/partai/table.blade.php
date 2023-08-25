@@ -30,11 +30,18 @@
                         <td>{{ $row->nama_partai }}</td>
                         <td style="display: flex; align-items: center; ">
                             <a href="/edit_partai/{{$row->id}}" style="border-radius: 5px" class="btn btn-success btn-sm mr-1">Edit</a>
-                            <form action="/hapus_partai/{{$row->id}}" method="POST" onsubmit="return confirm('Are You Sure?')">
+                            @foreach ($data as $row)
+                               <div class="data-item">
+                                 <p>{{ $row->nama }}</p>
+                               <form action="{{ route('hapus_partai', ['id' => $row->id]) }}" method="post">
                                 @csrf
-                                @method('DELETE')
-                                <button type="submit" style="margin-left: 20px; border-radius:5px" class="btn btn-danger btn-sm">Hapus</button>
+                                @method('delete')
+                               <button type="submit" style="border-radius: 5px" class="btn btn-danger btn-sm mr-2">Hapus Data</button>
                             </form>
+                               </div>
+                            @endforeach
+
+                        
                         </td>
                     </tr>
                 @endforeach

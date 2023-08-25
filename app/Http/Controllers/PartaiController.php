@@ -41,8 +41,13 @@ class PartaiController extends Controller
     public function hapus_partai($id)
     {
         $data = Partai::find($id);
-        $data->delete();
-        return redirect()->route('partai')->with('success','data Berhasil Di hapus');
+        
+        if ($data !== null) {
+         $data->delete();
+           return redirect()->route('partai')->with('success', 'Data partai berhasil dihapus.');
+        } else {
+           return redirect()->route('partai')->with('error', 'Data partai tidak ditemukan.');
+        }  
     }
     
 }

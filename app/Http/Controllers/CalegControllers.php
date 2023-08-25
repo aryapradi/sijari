@@ -2,63 +2,49 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Caleg;
+use App\Models\Partai;
 use Illuminate\Http\Request;
 
 class CalegControllers extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function caleg()
     {
-        return view('caleg.table');
+        $data = Caleg::all();
+        return view('caleg.table', compact('data'));
+    }
+    
+    public function create_caleg()
+    {
+        $partai = Partai::all();
+        return view('caleg.form', compact(['partai']));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function store_caleg(Request $request)
     {
-        return view('caleg.form');
+        Caleg::create($request->all());
+        return redirect()->route('caleg');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    public function edit_caleg($id)   
     {
-        //
+        $data = Caleg::find($id);
+        $partai = Partai::all();
+        
+        return view('caleg.edit', compact('data','partai'));
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+    public function update_caleg(Request $request, $id)
     {
-        //
+        $data = Caleg::find($id);
+        $data->update($request->all());
+        return redirect()->route('caleg');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
+    public function hapus_caleg($id)
     {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        $data = caleg::find($id);
+        $data->delete();
+        return redirect()->route('caleg');
     }
 }
